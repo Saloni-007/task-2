@@ -1,0 +1,14 @@
+# Filtering data (Example: Filter orders where Quantity is greater than 3)
+filtered_df = df[df['Quantity'] > 3]
+print("\nFiltered DataFrame (Quantity > 3):")
+print(filtered_df)
+
+# Sorting data by Price in descending order
+sorted_df = df.sort_values(by='Price', ascending=False)
+print("\nSorted DataFrame by Price (descending order):")
+print(sorted_df)
+
+# Grouping data by Product and calculating total Quantity and average Price per Product
+grouped_df = df.groupby('Product').agg({'Quantity': 'sum', 'Price': 'mean'}).reset_index()
+print("\nGrouped DataFrame by Product (total Quantity and average Price):")
+print(grouped_df)
