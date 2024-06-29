@@ -1,0 +1,23 @@
+import pandas as pd
+import numpy as np
+
+# Example DataFrame with missing values and duplicates
+data = {
+    'A': [1, 2, np.nan, 2, 3],
+    'B': ['x', np.nan, 'y', 'y', 'z'],
+    'C': [np.nan, 'p', 'q', 'q', 'r']
+}
+
+df = pd.DataFrame(data)
+print("Original DataFrame:")
+print(df)
+
+# Handling missing values
+df['A'].fillna(df['A'].mean(), inplace=True)  # Fill NaN in column 'A' with mean of column 'A'
+df['B'].fillna('missing', inplace=True)  # Fill NaN in column 'B' with 'missing'
+
+# Removing duplicates
+cleaned_df = df.drop_duplicates()
+
+print("\nCleaned DataFrame:")
+print(cleaned_df)
