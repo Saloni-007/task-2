@@ -1,0 +1,14 @@
+import pandas as pd
+
+# Sample dataset
+data = {
+    'OrderID': [101, 102, 103, 104, 105],
+    'Customer': ['Alice', 'Bob', 'Charlie', 'David', 'Emily'],
+    'Product': ['A', 'B', 'A', 'C', 'B'],
+    'Quantity': [5, 3, 7, 2, 4],
+    'Price': [10.0, 20.0, 15.0, 8.0, 12.0]
+}
+
+df = pd.DataFrame(data)
+print("Original DataFrame:")
+print(df)
